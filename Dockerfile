@@ -19,6 +19,3 @@ USER nonroot
 WORKDIR /app
 COPY --from=temp_build /home/gradle/src/build/libs/*.jar /app/issuer.jar
 ENTRYPOINT ["java", "-jar", "/app/issuer.jar"]
-
-# docker build --build-arg SKIP_TESTS=true -t image-name .
-# docker scout quickview
