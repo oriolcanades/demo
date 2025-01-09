@@ -1,1 +1,13 @@
-spring.application.name=demo
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    locations: classpath:db/migration
+    user: postgres
+    password: postgres
