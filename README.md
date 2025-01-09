@@ -20,3 +20,16 @@ Then, to run the application locally, you can use the `gradlew` command:
 ```bash
 ./gradlew bootRun
 ```
+
+## Creating a Docker Image
+
+To create a Docker image of the application, you can use the following command:
+
+```bash
+docker build --build-arg SKIP_TESTS=true -t image-name .
+```
+
+View a summary of image vulnerabilities and recommendations:
+```bash
+docker scout quickview 
+```

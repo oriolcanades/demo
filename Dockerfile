@@ -1,5 +1,5 @@
 # temp build
-FROM docker.io/gradle:8.9.0 AS temp_build
+FROM docker.io/gradle:8.4.0 AS temp_build
 ARG SKIP_TESTS=false
 COPY build.gradle settings.gradle /home/gradle/src/
 COPY src /home/gradle/src/src
@@ -17,7 +17,8 @@ RUN addgroup -S nonroot \
     && adduser -S nonroot -G nonroot
 USER nonroot
 WORKDIR /app
-COPY --from=temp_build /home/gradle/src/build/libs/*.jar /app/demo.jar
-ENTRYPOINT ["java", "-jar", "/app/demo.jar"]
+COPY --from=temp_build /home/gradle/src/build/libs/*.jar /app/issuer.jar
+ENTRYPOINT ["java", "-jar", "/app/issuer.jar"]
 
 # docker build --build-arg SKIP_TESTS=true -t image-name .
+# docker scout quickview
