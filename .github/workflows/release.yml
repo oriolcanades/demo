@@ -59,7 +59,7 @@ jobs:
           SUFFIX: -snapshot
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-          DOCKER_HUB_CLIENT_NAME: in2workspace
+          DOCKER_HUB_CLIENT_NAME: oriolcanades
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -107,7 +107,7 @@ jobs:
           VERSION: ${{ env.VERSION }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
-          DOCKER_HUB_CLIENT_NAME: in2workspace
+          DOCKER_HUB_CLIENT_NAME: oriolcanades
 
       - name: Create GitHub Release
         uses: actions/create-release@v1
