@@ -11,3 +11,5 @@ spring:
     locations: classpath:db/migration
     user: postgres
     password: postgres
+  jpa:
+    open-in-view: false
