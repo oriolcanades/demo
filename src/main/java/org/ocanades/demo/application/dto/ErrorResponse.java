@@ -1,9 +1,9 @@
-package org.ocanades.demo.exceptions;
+package org.ocanades.demo.application.dto;
 
 import lombok.Builder;
 
 @Builder
-public record RestResponseErrorMessage(
+public record ErrorResponse(
         String type,
         String title,
         int status,

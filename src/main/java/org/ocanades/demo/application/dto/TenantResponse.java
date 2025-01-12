@@ -1,4 +1,4 @@
-package org.ocanades.demo.models;
+package org.ocanades.demo.application.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

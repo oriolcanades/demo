@@ -1,4 +1,4 @@
-package org.ocanades.demo.models;
+package org.ocanades.demo.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
