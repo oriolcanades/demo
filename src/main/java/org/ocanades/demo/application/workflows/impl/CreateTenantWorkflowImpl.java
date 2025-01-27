@@ -2,9 +2,10 @@ package org.ocanades.demo.application.workflows.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.ocanades.demo.application.dto.TenantRequest;
+import org.ocanades.demo.application.exceptions.CreateTenantException;
+import org.ocanades.demo.application.mappers.TenantMapper;
 import org.ocanades.demo.application.workflows.CreateTenantWorkflow;
 import org.ocanades.demo.domain.entities.Tenant;
-import org.ocanades.demo.domain.mappers.TenantMapper;
 import org.ocanades.demo.domain.services.TenantService;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,13 @@ public class CreateTenantWorkflowImpl implements CreateTenantWorkflow {
 
     @Override
     public String execute(TenantRequest tenantRequest) {
-        Tenant tenant = tenantMapper.toEntity(tenantRequest);
-        return tenantService.createTenant(tenant);
+        try {
+            Tenant tenant = tenantMapper.toEntity(tenantRequest);
+            return tenantService.createTenant(tenant);
+        } catch (Exception e) {
+            throw new CreateTenantException("Error creating tenant with name: " + tenantRequest.name());
+        }
+
     }
 
 }
