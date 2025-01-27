@@ -2,15 +2,14 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.1'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'io.gatling.gradle' version '3.13.3'
 }
 
 group = 'org.ocanades'
-version = '0.2.0'
+version = '0.3.0'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+	sourceCompatibility = JavaVersion.VERSION_17
 }
 
 configurations {
@@ -39,6 +38,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	// Testing
+	implementation 'io.gatling:gatling-core:3.13.3'
+	implementation 'io.gatling:gatling-http:3.13.3'
+	implementation 'io.gatling:gatling-app:3.13.3'
+	gatlingImplementation 'io.gatling.highcharts:gatling-charts-highcharts:3.13.3'
+	gatlingImplementation 'io.gatling:gatling-http-java:3.13.3'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

@@ -1,4 +1,4 @@
-package org.ocanades.demo.domain.mappers;
+package org.ocanades.demo.application.mappers;
 
 import org.ocanades.demo.application.dto.TenantRequest;
 import org.ocanades.demo.application.dto.TenantResponse;

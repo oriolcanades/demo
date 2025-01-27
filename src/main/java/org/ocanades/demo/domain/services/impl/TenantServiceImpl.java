@@ -5,7 +5,7 @@ import org.ocanades.demo.domain.entities.Tenant;
 import org.ocanades.demo.domain.exceptions.TenantAlreadyExistsException;
 import org.ocanades.demo.domain.exceptions.TenantNotFoundException;
 import org.ocanades.demo.domain.services.TenantService;
-import org.ocanades.demo.infrastructure.repositories.TenantRepository;
+import org.ocanades.demo.domain.repositories.TenantRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

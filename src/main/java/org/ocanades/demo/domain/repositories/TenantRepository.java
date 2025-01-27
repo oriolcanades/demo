@@ -1,4 +1,4 @@
-package org.ocanades.demo.infrastructure.repositories;
+package org.ocanades.demo.domain.repositories;
 
 import org.ocanades.demo.domain.entities.Tenant;
 import org.springframework.data.jpa.repository.JpaRepository;

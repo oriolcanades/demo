@@ -1,6 +1,7 @@
 package org.ocanades.demo.application.workflows.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.ocanades.demo.application.exceptions.DeleteTenantException;
 import org.ocanades.demo.application.workflows.DeleteTenantWorkflow;
 import org.ocanades.demo.domain.services.TenantService;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,11 @@ public class DeleteTenantWorkflowImpl implements DeleteTenantWorkflow {
 
     @Override
     public void execute(String id) {
-        tenantService.deleteTenant(id);
+        try {
+            tenantService.deleteTenant(id);
+        } catch (Exception e) {
+            throw new DeleteTenantException("Error deleting tenant with id: " + id);
+        }
     }
 
 }
