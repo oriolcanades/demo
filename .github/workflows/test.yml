@@ -6,7 +6,7 @@ on:
     branches:
       - main
     types: [ opened, synchronize, reopened ]
-    
+
 jobs:
   performance-test:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
       - name: Upload Gatling results to GitHub
         uses: actions/upload-artifact@v4
         with:
-          name: gatling-results
+          name: gatling-results-2
           path: build/reports/gatling
