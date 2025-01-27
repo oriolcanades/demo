@@ -14,14 +14,14 @@ public class BasicSimulation extends Simulation {
             .baseUrl("http://localhost:8080")
             .acceptHeader("application/json");
 
-    ScenarioBuilder scenarioBuilder = scenario("Get Tenants")
-            .exec(http("request_tenants")
-                    .get("/api/v1/tenants")
+    ScenarioBuilder scenarioBuilder = scenario("Demo API Load Test")
+            .exec(http("request_demo")
+                    .get("/api/v1/demo")
                     .check(status().is(200)));
 
     {
         setUp(
-                scenarioBuilder.injectOpen(atOnceUsers(100)) // Simulate 1000 users at once
+                scenarioBuilder.injectOpen(atOnceUsers(5000)) // Simulate 1000 users at once
         ).protocols(httpProtocol);
     }
 
